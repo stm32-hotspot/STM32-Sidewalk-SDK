@@ -1,0 +1,38 @@
+#
+##############################################################################
+# file:    config.yaml
+# brief:   Geolocation Demo configuration for AWS deployment
+##############################################################################
+#
+# Copyright (c) 2025 STMicroelectronics.
+# All rights reserved.
+#
+# This software is licensed under terms that can be found in the LICENSE file
+# in the root directory of this software component.
+# If no LICENSE file comes with this software, it is provided AS-IS.
+#
+##############################################################################
+#
+
+Config:
+  # Credentials
+  AWS_PROFILE: null  # Replace with your actual AWS profile name or leave as null to use AWS keys specified below
+  AWS_ACCESS_KEY_ID: null  # Replace with your actual AWS access key ID
+  AWS_SECRET_ACCESS_KEY: null  # Replace with your actual AWS secret access key
+  AWS_SESSION_TOKEN: null  # Replace with your actual AWS session token
+
+  # Deployment config
+  AWS_DEFAULT_REGION: null  # This is currently fixed to us-east-1 due to Sidewalk availability
+  INTERACTIVE_MODE: False  # Run automated deployment by default. Set to True for interactive step-by-step mode
+
+  # Demo app parameters
+  SID_DEMO_NAME: "SidewalkGeolocation" # Name of the demo. This parameter is used as a prefix for all cloud entities to be created (policies, roles, lambdas, etc.)
+  SID_DEMO_MQTT_TOPIC_ROOT: "sidewalk/geolocation"  # Top level MQTT topic for this demo. Subscribe to SID_DEMO_MQTT_TOPIC_ROOT/# to receive all messages
+  SID_DEMO_PROVISION_DEVICE: True  # If enabled, creates a Sidewalk device in AWS account, assigns it to the demo destination and generates manufacturing data (MFG) to be flashed to the end node
+  SID_DEMO_DEVICE_NAME: null  # Name of the Sidewalk device to be created. If this parameter is null the default name is "<SID_DEMO_NAME>Device" (e.g. SidewalkGeolocationDevice)
+Outputs:
+    DEVICE_PROFILE_ID: null  # Sidewalk Device Profile ID of the created device instance in AWS
+    DEVICE_ID: null  # Sidewalk Wireless Device ID of the created device instance in AWS
+_Paths:
+  PROVISION_OUTPUT_DIR: manufacturing_data
+  PROVISION_SCRIPT_DIR: ../../../../../tools/provision  # Tool for generating manufacturing data (MFG) from AWS device json

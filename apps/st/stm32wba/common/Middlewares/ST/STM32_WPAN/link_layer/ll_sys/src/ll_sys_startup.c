@@ -1,0 +1,166 @@
+/**
+  ******************************************************************************
+  * @file    ll_sys_startup.c
+  * @author  MCD Application Team
+  * @brief   Link Layer IP system interface startup module
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+
+#include "ll_fw_config.h"
+#include "ll_sys.h"
+#include "ll_intf.h"
+#include "ll_sys_startup.h"
+#include "common_types.h"
+#if defined(MAC)
+#ifndef OPENTHREAD_CONFIG_FILE
+/* Projects with MAC Layer (i.e. 15.4 except Thread) */
+#include "st_mac_802_15_4_sap.h"
+#endif /* OPENTHREAD_CONFIG_FILE */
+#endif /* MAC */
+
+/**
+  * @brief  Missed HCI event flag
+  */
+uint8_t missed_hci_event_flag = 0;
+/*vvv PATCH STMC-485 vvvvvvvvvv*/
+static uint8_t is_ll_initialized = 0;
+/*^^^ END OF PATCH STMC-485 ^^^*/
+
+/*vvv PATCH STMC-485 vvvvvvvvvv*/
+// static void ll_sys_dependencies_init(void);
+/*^^^ END OF PATCH STMC-485 ^^^*/
+#ifdef BLE
+static void ll_sys_event_missed_cb( ble_buff_hdr_t* ptr_evnt_hdr )
+{
+  missed_hci_event_flag = 1;
+}
+
+/**
+  * @brief  Initialize the Link Layer IP BLE controller
+  * @param  None
+  * @retval None
+  */
+void ll_sys_ble_cntrl_init(hst_cbk hostCallback)
+{ 
+  const struct hci_dispatch_tbl* p_hci_dis_tbl = NULL;
+  
+  hci_get_dis_tbl( &p_hci_dis_tbl );
+  
+  ll_intf_init(p_hci_dis_tbl);
+
+  ll_intf_rgstr_hst_cbk(hostCallback);
+
+  ll_intf_rgstr_hst_cbk_ll_queue_full( ll_sys_event_missed_cb );
+
+  ll_sys_dependencies_init();
+}
+#endif /* BLE */
+
+#if defined(MAC)
+#ifndef OPENTHREAD_CONFIG_FILE
+/**
+  * @brief  Initialize the Link Layer IP 802.15.4 MAC controller
+  * @param  None
+  * @retval None
+  */
+void ll_sys_mac_cntrl_init(void)
+{
+  ST_MAC_preInit();
+  ll_sys_dependencies_init(); 
+}
+#endif /* OPENTHREAD_CONFIG_FILE */
+#endif /* MAC */
+
+/**
+  * @brief  Start the Link Layer IP in OpenThread configuration
+  * @param  None
+  * @retval None
+  */
+void ll_sys_thread_init(void)
+{
+  ll_sys_dependencies_init();
+}
+
+/**
+  * @brief  Initialize the Link Layer resources for startup.
+  *         This includes: - Deep Sleep feature resources
+  *                        - Link Layer background task
+  * @param  None
+  * @retval None
+  */
+/*vvv PATCH STMC-485 vvvvvvvvvv*/
+// static void ll_sys_dependencies_init(void)
+void ll_sys_dependencies_init(void)
+/*^^^ END OF PATCH STMC-485 ^^^*/
+{
+  /*vvv PATCH STMC-485 vvvvvvvvvv*/
+  // static uint8_t is_ll_initialized = 0;
+  /*^^^ END OF PATCH STMC-485 ^^^*/
+  ll_sys_status_t dp_slp_status;
+  
+  /* Ensure Link Layer resources are created only once */
+  if (is_ll_initialized == 1) {
+    return;
+  }
+  /*vvv PATCH STMC-485 vvvvvvvvvv*/
+  /* Initialization flag should be set after all initialization steps are completed */
+  // is_ll_initialized = 1;
+  /*^^^ END OF PATCH STMC-485 ^^^*/
+  
+  /* Deep sleep feature initialization */
+  dp_slp_status = ll_sys_dp_slp_init();
+  ll_sys_assert(dp_slp_status == LL_SYS_OK); 
+  
+  /* Background task initialization */
+  ll_sys_bg_process_init();
+  
+  /* Link Layer user parameters application */
+  ll_sys_config_params();
+  /*vvv PATCH STMC-485 vvvvvvvvvv*/
+
+  is_ll_initialized = 1;
+  /*^^^ END OF PATCH STMC-485 ^^^*/
+}
+/*vvv PATCH STMC-485 vvvvvvvvvv*/
+
+void ll_sys_dependencies_deinit(void)
+{
+  ll_sys_status_t dp_slp_status;
+
+  /* Ensure Link Layer resources are deallocated only once */
+  if (is_ll_initialized == 0) {
+    return;
+  }
+
+  /* Reset LL layer to ensure all background activities are stopped */
+  (void)ll_intf_reset();
+
+  /* Reset radio event and RCO calibration statuses to ensure they won't prevent entering LPM */
+  ll_sys_radio_evt_not(0u);
+  ll_sys_rco_clbr_not(0u);
+
+  /* Deep sleep feature de-initialization */
+  dp_slp_status = ll_sys_dp_slp_deinit();
+  ll_sys_assert(dp_slp_status == LL_SYS_OK); 
+
+  /* Background task initialization */
+  ll_sys_bg_process_deinit();
+
+  is_ll_initialized = 0;
+}
+
+uint8_t ll_sys_is_initialized(void)
+{
+  return is_ll_initialized;
+}
+/*^^^ END OF PATCH STMC-485 ^^^*/

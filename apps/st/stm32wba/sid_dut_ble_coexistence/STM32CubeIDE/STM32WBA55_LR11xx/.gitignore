@@ -1,0 +1,6 @@
+**/[D|d]ebug*
+**/[R|r]elease*
+**/*.launch
+**/spec.d
+**/.metadata
+**/.settings
