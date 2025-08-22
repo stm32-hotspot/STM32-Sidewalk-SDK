@@ -1,0 +1,45 @@
+/**
+  ******************************************************************************
+  * @file    sid_app_version_cubeide.h
+  * @brief   App version information for Sidewalk projects in CubeIDE
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2024-@CURRENT_YEAR@ STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+
+#ifndef __SID_APP_VERSION_CUBEIDE_H_
+#define __SID_APP_VERSION_CUBEIDE_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#define SID_APP_PROJECT_NAME               CUBEIDE_APP_NAME "_" CUBEIDE_BOARD_TYPE
+
+#define SID_APP_PROJECT_VERSION_STRING     "@PROJECT_VERSION@"
+
+#define SID_APP_PROJECT_MAJOR_VERSION      @PROJECT_VERSION_MAJOR@
+
+#define SID_APP_PROJECT_MINOR_VERSION      @PROJECT_VERSION_MINOR@
+
+#define SID_APP_PROJECT_PATCH_VERSION      @PROJECT_VERSION_PATCH@
+@OPTIONAL_DEFINE_SID_APP_PROJECT_BUILD_VERSION@
+#define SID_APP_PROJECT_BUILD_TYPE         CUBEIDE_BUILD_TYPE
+
+#define SID_APP_PROJECT_COMMIT_HASH_STRING "@PROJECT_COMMIT_HASH@"
+
+#define SID_APP_PROJECT_COMMIT_DESCRIPTION "@PROJECT_COMMIT_DESCRIPTION@"
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
+
+#endif /* __SID_APP_VERSION_CUBEIDE_H_ */

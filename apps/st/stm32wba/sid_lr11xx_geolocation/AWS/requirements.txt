@@ -1,0 +1,11 @@
+botocore~=1.37.9
+boto3~=1.37.9
+s3transfer~=0.11.4
+jmespath~=1.0.1
+urllib3 (<1.27,>=1.25.4) ; python_version < '3.10'
+urllib3 (!=2.2.0,<3,>=1.25.4) ; python_version >= '3.10'
+python-dateutil (<3.0.0,>=2.1)
+six~=1.17.0
+colorama~=0.4.6
+PyYAML~=6.0.2
+-r ../../../../../tools/provision/requirements.txt

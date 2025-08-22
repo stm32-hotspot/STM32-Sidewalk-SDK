@@ -1,0 +1,59 @@
+{
+    "acs": {
+        "ed25519": {
+            "device_prk": "71c727a6ca7a0a9e8e3f9d01ee86f865327df1f77790f09b79a726c76c70d19d",
+            "smsn": "b42dc567933292d0657ccd41dec692435e155ebe1b32139efae05712854cbb8f",
+            "device_pub": "522e749b417452027a957a70790ecc4ca5bfc7ced42310a1f4ab6632f5f64341",
+            "device_sig": "21efa9fee462c247909912970557c0537593234442de1b5b01bc7df943dad183dde5e3af271c97d6dd4fb67f709c50dc4a5ea2b9271d68c649d7714ede37d405",
+            "dak_serial": "e47c83b107",
+            "dak_pub": "ffb8a755034d80040b24ec544051dc14461ef5427fae63929807bdb6de40e814",
+            "dak_sig": "dbe1e087a4737c263fb6846ef86bf20f1a83f016441c981e1a8c5d81819fa05f060fdc437860bd0a9f367d3374bb2326286ca01b74c256984f8851d84d393b05",
+            "product_serial": "cea685b7612e76",
+            "product_pub": "9650b5107f94d3364296e6f18ffd9df47fd5823bf29a211f51e26fe174904438",
+            "product_sig": "8f608e3277b113ffed249b51e9d6d9079cfde60c4ea2fe5731e6ad5aa5dbd2f3d6b9e4878b1a417fb003be3bf8fa1db8895c5d50c77f4240acf3cdd01547c00b",
+            "man_serial": "7bd5d47e",
+            "man_pub": "a684c7a3f9bff46820a7b6adbdd841ebee6ce385f5e893846b0d9565cde5d56d",
+            "man_sig": "b98aab2e6429b7671dd64d35267e39e6181cc6ec83db03edfeacdde69de48fb601946878bfef898f844782ff3b90d9a901a7d0d65cb2ef73f9e04861a0760f0e",
+            "sw_serial": "3c344c41",
+            "sw_pub": "8f2fd5368dba85553a1e6b219f20b2c6dd5b0cdd9403c70b616fb484c41dbcc6",
+            "sw_sig": "9a1ac99ae4ef17b38eba599d9102a39155991e740ff0e0170c882655953a17013fc882b49e86ea711340adb32391a595ac65723f29cc084eb826c41f3d0d7f0e",
+            "root_serial": "f1d803b9cd",
+            "root_pub": "b0de4f31e0076f3dab125c1da48092c127480203c703a7da8c1016147ca32c07",
+            "root_sig": "243c0419db200bda917c46c5e02eeb57025463ad7f7b1ea51c6fc24940ebafde7310efcf65f6c54398a17361f2519778b69aaac27cff34c8d06098c36f16e10c"
+        },
+        "p256r1": {
+            "device_prk":"0fb1055b7f3194a00f168e7c7a22234f3d43b0549b6f1a48250d9e53dab423b6",
+            "smsn":"b42dc567933292d0657ccd41dec692435e155ebe1b32139efae05712854cbb8f",
+            "device_pub":"73f926c6f1d06c34d04500666a8f42fa5f1e112ad0ad0d435e1d5254b7b657307cebd38bcb251238ebee617e7e7728664a72225f420d7d83e016132a8e13e755",
+            "device_sig":"b7cc3a5eeba1c003ff88a64fa9a9cf2863be049b7dc46be4d527b2c99859133993e744420d456bf38781c8b7b4872d26ca2d0bc205e4085ee33a84f9495ee8ae",
+            "dak_serial":"6f0785bb8712b8",
+            "dak_pub":"7eaaf801c657eee7f29a0da87e6967f5ba0cbca3295ab145f7e030050caf842178852492b2f532475648a827538fc44c75656efeb8776744db4a81961e153b9e",
+            "dak_sig":"9f4150231f2f163c72c7858d93b1e44885e2934fd9314a78fbf461f8ba15b57c6d54ada6044b4673a4481a9336e868f0178de8964704cefc9c7fcda46afdc816",
+            "product_serial":"733785baf8130c",
+            "product_pub":"361f5f69f4f130cbc23550692feb0e9ee5c0c1624aa6ca776ffb3defe8d644ba5bf75e538b1372edd942ea51e5bb672573ef75478f173ec36203f9c118f98b51",
+            "product_sig":"35e9ef93651161083fc03665e1253e75f5783bdab7d35fdf0846cf5fa54a052362a3720b1a7c2123b5a6624d10a8b5abf8895d02aaf1b1c1bbc91defbe7fa67b",
+            "man_serial":"4a146c70",
+            "man_pub":"a29f72ca3d2eb155c1ae200f819035791184533def297fddf441570350a5ba6c1ee2c4ce33bdadc0b537da0606c89adda5b99709380c6316485908d5be137880",
+            "man_sig":"dd79f47f0eb4a7dc0461cac24175ac3ef21bb5dfbeafc100558594cd9ece7749a03d380dc96a6eae043eeea586e6f290687d93bdd992ca714df951be89ee42cd",
+            "sw_serial":"b60504b00683",
+            "sw_pub":"824ac120307f32411e42e53c6131784b6c23236aceefa7c1ad03d8681f9e1914f7cbca9002395946c552b3e4e74c6116cb855cf93e836018cddd258ed768d9f0",
+            "sw_sig":"5653996ff5c829c9d2ee24283d3334f043ca3e19a1a0c7f7cfc1d348b65dcfa192aaf6790dcc3e9c59bdf47d140dadb8f080def70529346b714e015958d5b983",
+            "root_serial":"39f3c366",
+            "root_pub":"4f92832e83d69f4071287445b4972f01a6b22f75573b91455edc8039d1fe67bc8c7fa0915c97665a74f9c6c0a822864a9d234c6d0c81ae2e2816fa2dff391717",
+            "root_sig":"971673cea9f793626133dce89872f62ad2a20a6c2836a27358a636364b965c6b0f7fba369b6061ded2dd197e89d784a6015f749db2c2d3ca11fd40ff6e4ea02a"
+        },
+        "json": {
+            "p256R1": "tC3FZ5MyktBlfM1B3saSQ14VXr4bMhOe+uBXEoVMu49z+SbG8dBsNNBFAGZqj0L6Xx4RKtCtDUNeHVJUt7ZXMHzr04vLJRI46+5hfn53KGZKciJfQg19g+AWEyqOE+dVt8w6XuuhwAP/iKZPqanPKGO+BJt9xGvk1SeyyZhZEzmT50RCDUVr84eByLe0hy0myi0LwgXkCF7jOoT5SV7orm8HhbuHErh+qvgBxlfu5/KaDah+aWf1ugy8oylasUX34DAFDK+EIXiFJJKy9TJHVkioJ1OPxEx1ZW7+uHdnRNtKgZYeFTuen0FQIx8vFjxyx4WNk7HkSIXik0/ZMUp4+/Rh+LoVtXxtVK2mBEtGc6RIGpM26GjwF43olkcEzvycf82kav3IFnM3hbr4Eww2H19p9PEwy8I1UGkv6w6e5cDBYkqmyndv+z3v6NZEulv3XlOLE3Lt2ULqUeW7ZyVz73VHjxc+w2ID+cEY+YtRNenvk2URYQg/wDZl4SU+dfV4O9q301/fCEbPX6VKBSNio3ILGnwhI7WmYk0QqLWr+IldAqrxscG7yR3vvn+me0oUbHCin3LKPS6xVcGuIA+BkDV5EYRTPe8pf930QVcDUKW6bB7ixM4zva3AtTfaBgbImt2luZcJOAxjFkhZCNW+E3iA3Xn0fw60p9wEYcrCQXWsPvIbtd++r8EAVYWUzZ7Od0mgPTgNyWpurgQ+7qWG5vKQaH2TvdmSynFN+VG+ie5CzbYFBLAGg4JKwSAwfzJBHkLlPGExeEtsIyNqzu+nwa0D2GgfnhkU98vKkAI5WUbFUrPk50xhFsuFXPk+g2AYzd0ljtdo2fBWU5lv9cgpydLuJCg9MzTwQ8o+GaGgx/fPwdNItl3PoZKq9nkNzD6cWb30fRQNrbjwgN73BSk0a3FOAVlY1bmDOfPDZk+Sgy6D1p9AcSh0RbSXLwGmsi91VzuRRV7cgDnR/me8jH+gkVyXZlp0+cbAqCKGSp0jTG0Mga4uKBb6Lf85FxeXFnPOqfeTYmEz3OiYcvYq0qIKbCg2onNYpjY2S5Zcaw9/ujabYGHe0t0ZfonXhKYBX3SdssLTyhH9QP9uTqAq",
+            "eD25519": "tC3FZ5MyktBlfM1B3saSQ14VXr4bMhOe+uBXEoVMu49SLnSbQXRSAnqVenB5DsxMpb/HztQjEKH0q2Yy9fZDQSHvqf7kYsJHkJkSlwVXwFN1kyNEQt4bWwG8fflD2tGD3eXjryccl9bdT7Z/cJxQ3EpeorknHWjGSddxTt431AXkfIOxB/+4p1UDTYAECyTsVEBR3BRGHvVCf65jkpgHvbbeQOgU2+Hgh6RzfCY/toRu+GvyDxqD8BZEHJgeGoxdgYGfoF8GD9xDeGC9Cp82fTN0uyMmKGygG3TCVphPiFHYTTk7Bc6mhbdhLnaWULUQf5TTNkKW5vGP/Z30f9WCO/KaIR9R4m/hdJBEOI9gjjJ3sRP/7SSbUenW2Qec/eYMTqL+VzHmrVql29Lz1rnkh4saQX+wA747+PoduIlcXVDHf0JArPPN0BVHwAt71dR+poTHo/m/9Gggp7atvdhB6+5s44X16JOEaw2VZc3l1W25iqsuZCm3Zx3WTTUmfjnmGBzG7IPbA+3+rN3mneSPtgGUaHi/74mPhEeC/zuQ2akBp9DWXLLvc/ngSGGgdg8OPDRMQY8v1TaNuoVVOh5rIZ8gssbdWwzdlAPHC2FvtITEHbzGmhrJmuTvF7OOulmdkQKjkVWZHnQP8OAXDIgmVZU6FwE/yIK0nobqcRNArbMjkaWVrGVyPynMCE64JsQfPQ1/DvHYA7nNsN5PMeAHbz2rElwdpICSwSdIAgPHA6fajBAWFHyjLAckPAQZ2yAL2pF8RsXgLutXAlRjrX97HqUcb8JJQOuv3nMQ789l9sVDmKFzYfJRl3i2mqrCfP80yNBgmMNvFuEM",
+            "metadata": {
+                "smsn": "b42dc567933292d0657ccd41dec692435e155ebe1b32139efae05712854cbb8f",
+                "apid": "SSDK",
+                "devicePrivKeyEd25519": "71c727a6ca7a0a9e8e3f9d01ee86f865327df1f77790f09b79a726c76c70d19d",
+                "devicePrivKeyP256R1": "0fb1055b7f3194a00f168e7c7a22234f3d43b0549b6f1a48250d9e53dab423b6"
+            }
+        }
+    },
+    "apid": "SSDK",
+    "sidewalk_id": "AAFFFFFFFF",
+    "app_pub": "717CCEF716433FD99EBC8BF4E3231F21"
+}

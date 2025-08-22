@@ -1,0 +1,10 @@
+.coverage
+app-server-ed25519.public.bin
+__pycache__/
+**/certificate_*
+**/certificate.json
+**/device_profile.json
+**/wireless_device.json
+**.s37
+**.bin
+**.hex
