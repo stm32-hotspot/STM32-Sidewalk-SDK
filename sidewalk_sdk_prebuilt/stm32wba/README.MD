@@ -11,10 +11,9 @@ This folder contains precompiled Sidewalk SDK using different configurations. Be
 
 # Basic Sidewalk Stack Limitations
 
-The following features were excluded from the Sidewalk stack to minimize flash and RAM space consumption:
+The following features were excluded from the basic variant of the Sidewalk stack to minimize flash and RAM space consumption:
 - Autoconnect
 - Multilink mode
 - Sidewalk Bulk Data Transfer (SBDT)
-- Low-latency LoRa link mode
 
 If your application requires any of the above features please use the full variant of the stack.

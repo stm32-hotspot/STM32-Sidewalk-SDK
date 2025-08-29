@@ -32,7 +32,7 @@ Arguments to the command are shown in <>
                                                       link value is optional, it can take the same values as for sid init command. If link value is not present the one
                                                       set with sid init will be used to call sid_stop api.
 
-    sid send -t <tv> -d <dv> -l <lm> -i <id> -o <low> -a <ack> <retry> <ttl> -r <data>
+    sid send -t <tv> -d <dv> -l <lm> -i <id> -a <ack> <retry> <ttl> -r <data>
                                                     - send data over the SID_LINK_TYPE selected, calls the sid_put_msg()API.
                                                       Data field must always be placed at the end of command patametrs. If -r parameter is not preset
                                                       data filed is treated as ascii. Example usage:
@@ -58,10 +58,6 @@ Arguments to the command are shown in <>
                                                     - i message id that needs to be used to send response. Valid only for messages of type response
                                                         <id> response id
                                                     - r data is interpreted hex string e.g. 010203AAFF
-                                                    - o low laency configuration
-                                                        possible <low> values:
-                                                        0 - Default Setting. Send the message with low latency disabled.
-                                                        1 - Send the message as a LoRa low latency message
                                                     - a configure parameters for transport ack:
                                                         <ack> - enable/disable ACK
                                                           1 - enable ACK
@@ -350,15 +346,6 @@ enum sid_rx_window_count {
 };
 
 /**
- * Describes the low latency setting for Asynchronous profile
- */
-enum sid_link3_low_latency {
-    SID_LINK3_LOW_LATENCY_DISABLE = 0,
-    SID_LINK3_LOW_LATENCY_ENABLE = 1,
-    SID_LINK3_LOW_LATENCY_LAST,
-};
-
-/**
  * Describes the frequency of RX windows opened by the device (in ms) in synchronous mode
  */
 enum sid_link2_rx_window_separation_ms {
@@ -394,19 +381,17 @@ sid option -lp_get_l2
 /**
  * Set and get profile setting for asynchronous network
  */
-// Set device profile to SID_LINK3_PROFILE_A with window count 5 (SID_RX_WINDOW_CNT_2) and SID_LINK3_LOW_LATENCY_DISABLE
-sid option -lp_set 128 5 0
-// Set device profile to SID_LINK3_PROFILE_A with window count 5 (SID_RX_WINDOW_CNT_2) and SID_LINK3_LOW_LATENCY_ENABLE
-sid option -lp_set 128 5 1
+// Set device profile to SID_LINK3_PROFILE_A with window count 5 (SID_RX_WINDOW_CNT_2)
+sid option -lp_set 128 5
+// Set device profile to SID_LINK3_PROFILE_A with window count 5 (SID_RX_WINDOW_CNT_2)
+sid option -lp_set 128 5
 sid option -lp_get_l3
-<info> app: CMD: ERR: 0 Link_profile ID: 129 Wndw_cnt: 0 Low_Latency = 1
+<info> app: CMD: ERR: 0 Link_profile ID: 129 Wndw_cnt: 0
 
-// Set device profile to SID_LINK3_PROFILE_B with infinite window count (SID_RX_WINDOW_CNT_INFINITE) and
-// SID_LINK3_LOW_LATENCY_DISABLE
-sid option -lp_set 129 0 0
-// Set device profile to SID_LINK3_PROFILE_B with infinite window count (SID_RX_WINDOW_CNT_INFINITE) and
-// SID_LINK3_LOW_LATENCY_ENABLE
-sid option -lp_set 129 0 1
+// Set device profile to SID_LINK3_PROFILE_B with infinite window count (SID_RX_WINDOW_CNT_INFINITE)
+sid option -lp_set 129 0
+// Set device profile to SID_LINK3_PROFILE_B with infinite window count (SID_RX_WINDOW_CNT_INFINITE)
+sid option -lp_set 129 0
 sid option -lp_get_l3
-<info> app: CMD: ERR: 0 Link_profile ID: 129 Wndw_cnt: 0 Low_Latency = 1
+<info> app: CMD: ERR: 0 Link_profile ID: 129 Wndw_cnt: 0
 ```
